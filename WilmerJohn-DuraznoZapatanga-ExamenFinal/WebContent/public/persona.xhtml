@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+    <title>Registrar</title>
+
+
+    <script type="text/javascript">
+        function indicador(data) {
+            if (data.status == "begin")
+                document.getElementById("id5").style.display = "inline";
+            else if (data.status == "success")
+                document.getElementById("id5").style.display = "none";
+        }
+    </script>
+
+</h:head>
+
+<h:body >
+    <h:outputLabel  value="#{bodegaBean.cookie}"/>
+    <div>
+        <p:graphicImage value=""/>
+        <a></a>
+        <!--<p:commandLink styleClass="btn btn-primary" style="margin-right: 15px" value="Mi Colaborador"/>
+        <p:commandLink styleClass="btn btn-primary" style="margin-right: 15px" value="Mi Cuenta"/>
+        <p:commandLink styleClass="btn btn-primary" style="margin-right: auto" value="Mi Perfil"/>
+        <p:commandLink styleClass="btn btn-danger" style="margin-left: auto" value="Cerrar Sesion"/>-->
+    </div>
+
+    <h:form id="form" >
+        <fieldset>
+            <legend>Ingresar Cliente</legend>           
+            
+            <h:outputText value="cedula" />
+            <h:inputText id="cedula" value="#{personaBean.cedula}"></h:inputText>
+	        <h:message for="cedula"></h:message>
+	        <br></br><br></br>
+            
+            <h:outputText value="nombres"/>
+	        <h:inputText id="nombre" value="#{personaBean.nombre}" ></h:inputText>
+	        <h:message for="nombre"></h:message>
+	        <br></br><br></br>
+	
+	        <h:outputText value="apellidos" />
+	        <h:inputText id="apellido" value="#{personaBean.apellido}" ></h:inputText>
+	        <h:message for="apellido"></h:message>
+	        <br></br><br></br>
+	
+	        <h:outputText value="correo"/>
+	        <h:inputText id="correo" value="#{personaBean.correo}"></h:inputText>
+	        <h:message for="correo"></h:message>
+	        <br></br><br></br>
+	        	
+	        <h:outputText value="direccion" />
+	        <h:inputText id="direccion" value="#{personaBean.direccion}" ></h:inputText>
+	        <h:message for="direccion"></h:message>
+	        <br></br><br></br>
+	        
+	        <h:outputText value="telefono" />
+	        <h:inputText id="telefono" value="#{personaBean.telefono}"></h:inputText>
+	        <h:message for="telefono"></h:message>
+	        <br></br><br></br>
+	        	        	
+	        <h:commandButton action="#{personaBean.crearPersona}" onclick="$('#form\\:hidden').val('#{personaBean.id}')" value="Crear" class="btn btn-primary" >
+	       		
+       		</h:commandButton>
+        </fieldset>
+
+    </h:form>
+    
+    
+
+</h:body>
+
+</html>

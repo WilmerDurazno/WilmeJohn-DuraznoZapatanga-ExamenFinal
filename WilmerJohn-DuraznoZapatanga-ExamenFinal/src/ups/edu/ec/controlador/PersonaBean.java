@@ -1,4 +1,4 @@
-package bean;
+package ups.edu.ec.controlador;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,9 +12,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
-
-import ejb.PersonaFacade;
-import entity.Persona;
+import ups.edu.ec.modelo.*;
+import ups.edu.ec.ejb.*;
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
@@ -110,16 +109,16 @@ public class PersonaBean implements Serializable {
 		
 		fecha = new Date();
 		
-		System.out.println(">>>>>>>>>>>>>	"+nombre);
-		System.out.println(">>>>>>>>>>>>>	"+apellido);
-		System.out.println(">>>>>>>>>>>>>	"+correo);
-		System.out.println(">>>>>>>>>>>>>	"+fecha);
+		System.out.println(""+nombre);
+		System.out.println(""+apellido);
+		System.out.println(""+correo);
+		System.out.println(""+fecha);
 		
 		try {
 			persona = new Persona(cedula, nombre, apellido, correo, direccion, telefono);
 			
 			personaFacade.create(persona);
-			System.out.println(">>>>>>>>>>>>>	"+persona.getId());
+			System.out.println(""+persona.getId());
 			
 			FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "menu.xhtml");
 			

@@ -1,4 +1,4 @@
-package bean;
+package ups.edu.ec.controlador;
 
 import java.io.Serializable;
 
@@ -8,13 +8,8 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-
-import ejb.PersonaFacade;
-import ejb.ReservaFacade;
-import ejb.RestauranteFacade;
-import entity.Persona;
-import entity.Reserva;
-import entity.Restaurante;
+import ups.edu.ec.modelo.*;
+import ups.edu.ec.ejb.*;
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
@@ -150,7 +145,7 @@ public class ReservaBean implements Serializable {
 				
 				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "menu.xhtml");
 			} else {
-				System.out.println(">>>>>>>>>>>>>>> NO HAY AFORO EN ESE RESTAURANTE");
+				System.out.println("NO HAY CAPACIDAD EN ESE RESTAURANTE");
 				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "reserva.xhtml");
 			}
 			

@@ -1,4 +1,4 @@
-package entity;
+package ups.edu.ec.modelo;
 
 import java.io.Serializable;
 

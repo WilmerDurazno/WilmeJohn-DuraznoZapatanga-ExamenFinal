@@ -1,4 +1,4 @@
-package ejb;
+package ups.edu.ec.ejb;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ejb;
+package ups.edu.ec.ejb;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -8,13 +8,13 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import entity.Persona;
-import entity.Restaurante;
+import ups.edu.ec.modelo.Restaurante;
+
 
 @Stateless
 public class RestauranteFacade  extends AbstractFacade<Restaurante> {
 
-	@PersistenceContext(unitName = "UlloaBermeo-IvanMarcelo-ExamenFinal")
+	@PersistenceContext(unitName = "WilmerJohn-DuraznoZapatanga-ExamenFinal")
 	private EntityManager entityManager;
 	
 	public RestauranteFacade() {

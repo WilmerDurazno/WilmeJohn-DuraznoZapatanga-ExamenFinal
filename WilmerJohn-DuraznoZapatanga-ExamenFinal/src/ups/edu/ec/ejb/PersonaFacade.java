@@ -1,4 +1,4 @@
-package ejb;
+package ups.edu.ec.ejb;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -8,12 +8,12 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import entity.Persona;
-
+import ups.edu.ec.ejb.*;
+import ups.edu.ec.modelo.*;
 @Stateless
 public class PersonaFacade  extends AbstractFacade<Persona> {
 
-	@PersistenceContext(unitName = "UlloaBermeo-IvanMarcelo-ExamenFinal")
+	@PersistenceContext(unitName = "WilmerJohn-DuraznoZapatanga-ExamenFinal")
 	private EntityManager entityManager;
 	
 	public PersonaFacade() {

@@ -1,4 +1,4 @@
-package bean;
+package ups.edu.ec.controlador;
 
 import java.io.Serializable;
 
@@ -9,8 +9,8 @@ import javax.faces.annotation.FacesConfig;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import ejb.RestauranteFacade;
-import entity.Restaurante;
+import ups.edu.ec.modelo.*;
+import ups.edu.ec.ejb.*;
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
@@ -38,7 +38,7 @@ public class RestauranteBean implements Serializable {
 	@PostConstruct
     public void init(){
         
-		System.out.println("***RestauranteBean INICIALIZADO***");
+		System.out.println("NO HAY CAPACIDAD");
 		
     }
 
@@ -92,7 +92,7 @@ public class RestauranteBean implements Serializable {
 			
 			FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "menu.xhtml");
 		} catch (Exception e) {
-			System.out.println(">>>>>>>> ERROR "+e.getMessage());
+			System.out.println("ERROR "+e.getMessage());
 			FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "restaurante.xhtml");
 		}
 		

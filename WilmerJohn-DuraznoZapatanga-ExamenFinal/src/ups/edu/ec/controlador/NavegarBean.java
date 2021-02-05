@@ -1,4 +1,4 @@
-package bean;
+package ups.edu.ec.controlador;
 
 import java.io.Serializable;
 

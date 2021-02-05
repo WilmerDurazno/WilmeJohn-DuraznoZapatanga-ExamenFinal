@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+    <title>Reserva</title>
+
+
+    <script type="text/javascript">
+        function indicador(data) {
+            if (data.status == "begin")
+                document.getElementById("id5").style.display = "inline";
+            else if (data.status == "success")
+                document.getElementById("id5").style.display = "none";
+        }
+    </script>
+
+</h:head>
+
+<h:body >
+    <h:outputLabel value="#{bodegaBean.cookie}"/>
+    <div >
+        <p:graphicImage value=""/>
+        <a class="navbar-brand"></a>
+        <!--<p:commandLink styleClass="btn btn-primary" style="margin-right: 15px" value="Mi Colaborador"/>
+        <p:commandLink styleClass="btn btn-primary" style="margin-right: 15px" value="Mi Cuenta"/>
+        <p:commandLink styleClass="btn btn-primary" style="margin-right: auto" value="Mi Perfil"/>
+        <p:commandLink styleClass="btn btn-danger" style="margin-left: auto" value="Cerrar Sesion"/>-->
+    </div>
+
+    <h:form id="form" >
+        <fieldset>
+            <legend>Hacer una Reserva</legend>           
+            
+            
+            <h:outputText value="fecha"/>
+	        <h:inputText id="fecha" value="#{reservaBean.fecha}" style="width:80%;"></h:inputText>
+	        <h:message for="fecha"></h:message>
+	        <br></br><br></br>
+	        	
+	        <h:outputText value="hora" />
+	        <h:inputText id="hora" value="#{reservaBean.hora}" style="width: 80%;"></h:inputText>
+	        <h:message for="hora"></h:message>
+	        <br></br><br></br>
+	        
+	        <h:outputText value="numPersonas" />
+	        <h:inputText id="numPersonas" value="#{reservaBean.numPersonas}" style="width: 80%;"></h:inputText>
+	        <h:message for="numPersonas"></h:message>
+	        <br></br><br></br>
+	        
+	        <h:outputText value="cedula" />
+	        <h:inputText id="cedula" value="#{reservaBean.cedula}" style="width: 80%;"></h:inputText>
+	        <h:message for="cedula"></h:message>
+	        <br></br><br></br>
+	        
+	        <h:outputText value="CodigoRestaurante" />
+	        <h:inputText id="restauranteSL" value="#{reservaBean.restauranteSL}" style="width: 80%;"></h:inputText>
+	        <h:message for="restauranteSL"></h:message>
+	        <br></br><br></br>
+	        	        	
+	        <!--
+	        <h:selectOneMenu styleClass="btn btn-secondary dropdown-toggle" value="#{productoBean.selectedbodega}" style="margin-right: 1%;">
+	            <f:selectItems value="#{productoBean.bodegas}" var="bodegas" itemValue="#{bodegas.codigo}" itemLabel="#{bodegas.nombre}"/>
+	        </h:selectOneMenu>-->
+	
+	        <h:commandButton action="#{reservaBean.crearReserva}" onclick="$('#form\\:hidden').val('#{personaBean.id}')" value="Crear" class="btn btn-primary" >
+	       		
+       		</h:commandButton>
+        </fieldset>
+
+    </h:form>
+    
+    
+
+</h:body>
+
+</html>
